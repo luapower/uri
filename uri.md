@@ -1,5 +1,18 @@
 
-## `uri.format(t) -> s`
+## `local uri = require'uri'`
+
+URI parsing and formatting.
+
+## API
+
+------------------------------------ -----------------------------------------
+`uri.format(t) -> s`                 format URI
+`uri.parse(s) -> t`                  parse URI
+`uri.escape(s[,res][,unres]) -> s`   escape URI fragment
+`uri.unescape(s) -> s`               unescape URI fragment
+------------------------------------ -----------------------------------------
+
+### `uri.format(t) -> s`
 
 Format a URI from a table containing the fields:
 `scheme`, `user`, `pass`, `host`, `port`, `path` or `segments`,
@@ -19,7 +32,7 @@ key order while the map form lays out the keys alphabetically. Values can be
 tostringables, `true` to format only the key without `=` or `false` to ignore
 the key.
 
-## `uri.parse(s) -> t`
+### `uri.parse(s) -> t`
 
 Parse a URI of the form
 `[scheme:](([//[user[:pass]@]host[:port][/path])|path)[?query][#fragment]`
@@ -41,13 +54,12 @@ Some edge cases and how they're handled:
 
 > Note that `://:@/?#` is a valid URL.
 
-## `uri.escape(s[,reserved][,unreserved]) -> s`
+### `uri.escape(s[,reserved][,unreserved]) -> s`
 
 Escape all characters except the URI spec `unreserved` and `sub-delims`
 characters, and the characters in the unreserved list, plus the characters
 in the reserved list, if any.
 
-## `uri.unescape(s) -> s`
+### `uri.unescape(s) -> s`
 
 Unescape escaped characters in the URI.
-
