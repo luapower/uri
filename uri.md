@@ -10,6 +10,10 @@ URI parsing and formatting.
 `uri.parse(s) -> t`                  parse URI
 `uri.escape(s[,res][,unres]) -> s`   escape URI fragment
 `uri.unescape(s) -> s`               unescape URI fragment
+`uri.parse_args(s) -> t`             parse the URI query part
+`uri.format_args(t) -> s`            format the URI query part
+`uri.parse_path(s) -> t`             parse the URI path part
+`uri.format_path(t) -> s`            format the URI path part
 ------------------------------------ -----------------------------------------
 
 ### `uri.format(t) -> s`
