@@ -96,7 +96,6 @@ local function parse_path(s) --[segment[/segment...]]
 end
 
 --argument order is retained by having the keys and values in the array part.
---duplicate keys form a list of values.
 local function parse_args(s) --var[=[val]]&|;...
 	local t = {}
 	for s in glue.gsplit(s, '[&;]+') do
